@@ -1,1 +1,24 @@
-<p>song-result works!</p>
+<div class="card-container">
+    <!-- @for (product of prodSvc.data$(); track product.id) { -->
+        <mat-card class="mat-card" appearance="outlined">
+            <mat-card-header>
+                <mat-card-title-group>
+                    <mat-card-title>
+                        THIS IS THE TITLE
+                        <!-- <a [routerLink]="'/product/' + product.id">{{product.title}}</a> -->
+                    </mat-card-title>
+                    <mat-card-subtitle class="mat-card">
+                        <!-- {{product.category}} -->
+                         THIS IS THE SUBTITLE
+                    </mat-card-subtitle>
+                    <!-- <img mat-card-sm-image src={{product.image}}> -->
+                    <img mat-card-sm-image src="https://t4.ftcdn.net/jpg/01/43/42/83/360_F_143428338_gcxw3Jcd0tJpkvvb53pfEztwtU9sxsgT.jpg">
+                </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content>
+                <!-- ${{product.price}} -->
+                 THIS IS THE CONTENT
+            </mat-card-content>
+        </mat-card>
+    <!-- } -->
+</div>
