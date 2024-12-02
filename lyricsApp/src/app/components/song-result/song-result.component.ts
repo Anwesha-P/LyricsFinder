@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
-
+import { APIService } from '../../service/api-service/api.service';
 
 @Component({
   selector: 'app-song-result',
@@ -11,5 +11,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './song-result.component.css'
 })
 export class SongResultComponent {
-  // Need to inject the service!!!!!!!!!!!!!!
+  service = inject(APIService)
 }
