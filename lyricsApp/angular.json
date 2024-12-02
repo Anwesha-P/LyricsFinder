@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lyricsApp": {
+    "lyricsapp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "lyricsApp:build:production"
+              "buildTarget": "lyricsapp:build:production"
             },
             "development": {
-              "buildTarget": "lyricsApp:build:development"
+              "buildTarget": "lyricsapp:build:development"
             }
           },
           "defaultConfiguration": "development"
