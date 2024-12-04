@@ -1,5 +1,6 @@
 <div class="card position-fixed top-0 end-0 m-3 p-3 bg-light shadow-sm d-flex justify-content-center logout-card">
     <div class="d-flex flex-column align-items-center justify-content-between h-100">
+        <p class="user-info mb-3 small text-muted">Welcome {{ userName }}!</p>
         <p class="user-info mb-3 small text-muted">Logged in as: {{ email }}</p>
         <button class="btn btn-outline-danger btn-sm w-100" (click)="logout()">Logout</button>
     </div>

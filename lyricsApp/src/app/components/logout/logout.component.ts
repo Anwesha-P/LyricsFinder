@@ -11,6 +11,7 @@ import { AuthService } from '../../service/auth-service/auth.service';
 export class LogoutComponent {
   auth = inject(AuthService);
   email = this.auth.currentUser?.email;
+  userName = this.auth.currentUser?.displayName;
   
   logout() {
     this.auth.logout();
