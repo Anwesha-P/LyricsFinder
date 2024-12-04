@@ -1,7 +1,26 @@
-<div class="card position-fixed top-0 end-0 m-3 p-3 bg-light shadow-sm d-flex justify-content-center logout-card">
-    <div class="d-flex flex-column align-items-center justify-content-between h-100">
-        <p class="user-info mb-3 small text-muted">Welcome {{ userName }}!</p>
-        <p class="user-info mb-3 small text-muted">Logged in as: {{ email }}</p>
-        <button class="btn btn-outline-danger btn-sm w-100" (click)="logout()">Logout</button>
+<div class="position-fixed top-0 end-0 m-3">
+    <!-- Large screen view -->
+    <div class="card p-3 bg-light shadow-sm d-none d-lg-block logout-card">
+        <div class="d-flex flex-column align-items-center justify-content-between h-100">
+            <p class="user-info mb-3 small text-muted">Welcome {{ userName }}!</p>
+            <button class="btn btn-outline-danger btn-sm w-100" (click)="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- Small screen view -->
+    <div class="d-lg-none position-relative">
+        <button class="btn btn-light rounded-circle shadow-sm user-circle-btn" (click)="toggleLogoutCard()">
+            <i class="bi bi-person-circle fs-4"></i>
+        </button>
+        
+        <!-- Popup card for small screens -->
+        @if (isLogoutCardVisible) {
+        <div class="card p-3 bg-light shadow-sm mt-2 position-absolute end-0 logout-card logout-popup-card">
+            <div class="d-flex flex-column align-items-center justify-content-between">
+                <p class="user-info mb-3 small text-muted">Welcome {{ userName }}!</p>
+                <button class="btn btn-outline-danger btn-sm w-100" (click)="logout()">Logout</button>
+            </div>
+        </div>
+        }
     </div>
 </div>
