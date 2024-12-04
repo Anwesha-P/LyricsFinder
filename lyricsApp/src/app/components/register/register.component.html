@@ -1,40 +1,38 @@
-<div class="container-fluid">
-    <div class="row mt-5">
-        <div class="col"></div>
-        <div class="col-4">
+<div class="container-fluid h-75">
+    <div class="row h-100 align-items-center justify-content-center">
+        <div class="login-container">
             <div class="card shadow">
-                <div class="card-body">
+                <div class="card-body p-3">
                     <form [formGroup]="registerInfoForm" (ngSubmit)="register()" [ngClass]="'form'">
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <h4 class="text-dark text-muted">Register</h4>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="firstName" class="form-label">First Name</label>
                             <input type="text" class="form-control" name="firstName" formControlName="firstName">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="lastName" class="form-label">Last Name</label>
                             <input type="text" class="form-control" name="lastName" formControlName="lastName">
                         </div>
-                        <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Email</label>
-                          <input type="email" class="form-control" name="email" formControlName="email">
+                        <div class="mb-2">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" formControlName="email">
                         </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label">Password</label>
-                          <input type="password" class="form-control" name="password" formControlName="password">
+                        <div class="mb-2">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" formControlName="password">
                         </div>
-                        <button type="submit" class="btn btn-info">Register</button>
+                        <button type="submit" class="btn btn-info mb-2">Register</button>
                         <div class="row">
                             <div class="col-md-6">
-                                <a href="/login" class="login-link">Have an Account ? Login </a>
+                                <a href="/login" class="back-to-login">Already have account? Login</a>
                             </div>
                         </div>
-                      </form>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="col"></div>
     </div>
 </div>
 

@@ -29,6 +29,16 @@ export class RegisterComponent {
   register() {
     const form = this.registerInfoForm;
 
+    if(form.get('firstName')!.invalid){
+      alert('Please enter first name');
+      return;
+    }
+
+    if(form.get('lastName')!.invalid){
+      alert('Please enter last name');
+      return;
+    }
+
     if(form.get('email')!.invalid){
       alert('Please enter email');
       return;

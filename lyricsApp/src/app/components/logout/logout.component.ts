@@ -13,6 +13,12 @@ export class LogoutComponent {
   email = localStorage.getItem('email');
   userName = localStorage.getItem('userName');
   
+  isLogoutCardVisible = false;
+  
+  toggleLogoutCard() {
+    this.isLogoutCardVisible = !this.isLogoutCardVisible;
+  }
+  
   logout() {
     this.auth.logout();
   }
