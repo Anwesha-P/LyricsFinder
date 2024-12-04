@@ -10,8 +10,8 @@ import { AuthService } from '../../service/auth-service/auth.service';
 })
 export class LogoutComponent {
   auth = inject(AuthService);
-  email = this.auth.currentUser?.email;
-  userName = this.auth.currentUser?.displayName;
+  email = localStorage.getItem('email');
+  userName = localStorage.getItem('userName');
   
   logout() {
     this.auth.logout();

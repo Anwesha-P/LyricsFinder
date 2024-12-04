@@ -22,8 +22,9 @@ export class AuthService {
 
       // The user must verify their email before they can access the home page. 
       if (res.user?.emailVerified === true) {
-        console.log(res.user);
         this.currentUser = res.user;
+        localStorage.setItem('userName', res.user.displayName!);
+        localStorage.setItem('email', res.user.email!);
         this.router.navigate(['/home']);
       } else {
         this.router.navigate(['/verify-email']);
@@ -57,6 +58,8 @@ export class AuthService {
   logout(){
     this.fireauth.signOut().then( ()=> {
       localStorage.removeItem('token');
+      localStorage.removeItem('userName');
+      localStorage.removeItem('email');
       this.router.navigate(['/login']);
     }, err => {
       alert(err.message);
