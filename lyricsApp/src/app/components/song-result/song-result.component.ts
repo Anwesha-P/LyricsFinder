@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { RouterLink } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
-
+import { LogoutComponent } from '../logout/logout.component';
 
 @Component({
   selector: 'app-song-result',
   standalone: true,
-  imports: [MatCardModule, RouterLink, NavbarComponent],
+  imports: [MatCardModule, RouterModule, NavbarComponent, LogoutComponent],
   templateUrl: './song-result.component.html',
   styleUrl: './song-result.component.css'
 })

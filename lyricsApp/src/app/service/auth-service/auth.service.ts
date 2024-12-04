@@ -10,6 +10,9 @@ export class AuthService {
   fireauth: AngularFireAuth = inject(AngularFireAuth);
   router: Router = inject(Router);
 
+  public currentUser: firebase.default.User | undefined;
+
+  
   constructor() { }
 
   // Method to process user login when email and password is provided. Routes user to the home page on successful login.
@@ -19,6 +22,7 @@ export class AuthService {
 
       // The user must verify their email before they can access the home page. 
       if (res.user?.emailVerified === true) {
+        this.currentUser = res.user;
         this.router.navigate(['/home']);
       } else {
         this.router.navigate(['/verify-email']);

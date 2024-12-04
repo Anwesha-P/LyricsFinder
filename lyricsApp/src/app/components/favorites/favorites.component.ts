@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { LogoutComponent } from '../logout/logout.component';
 
 @Component({
   selector: 'app-favorites',
   standalone: true,
-  imports: [RouterLink, NavbarComponent],
+  imports: [RouterModule, NavbarComponent, LogoutComponent],
   templateUrl: './favorites.component.html',
   styleUrl: './favorites.component.css'
 })
