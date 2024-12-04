@@ -23,6 +23,8 @@ export class AuthService {
       // The user must verify their email before they can access the home page. 
       if (res.user?.emailVerified === true) {
         this.currentUser = res.user;
+        localStorage.setItem('userName', res.user.displayName!);
+        localStorage.setItem('email', res.user.email!);
         this.router.navigate(['/home']);
       } else {
         this.router.navigate(['/verify-email']);
@@ -35,10 +37,17 @@ export class AuthService {
   }
 
   // Method to process user registeration
-  register(email: string, password: string){
+  register(email: string, password: string, firstName: string, lastName: string){
     this.fireauth.createUserWithEmailAndPassword(email, password).then( res => {
-      this.router.navigate(['/verify-email']);
-      this.sendEmailForVerification(res.user);
+      // Update the user's display name after account creation
+      res.user?.updateProfile({
+        displayName: `${firstName} ${lastName}`
+      }).then(() => {
+        this.router.navigate(['/verify-email']);
+        this.sendEmailForVerification(res.user);
+      }).catch(err => {
+        alert("Error updating display name: " + err.message);
+      });
     }, err => {
       alert(err.message);
       this.router.navigate(['/register']);
@@ -49,6 +58,8 @@ export class AuthService {
   logout(){
     this.fireauth.signOut().then( ()=> {
       localStorage.removeItem('token');
+      localStorage.removeItem('userName');
+      localStorage.removeItem('email');
       this.router.navigate(['/login']);
     }, err => {
       alert(err.message);
