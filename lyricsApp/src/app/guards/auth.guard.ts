@@ -3,7 +3,7 @@ import { CanActivateFn } from '@angular/router';
 
 import { Router } from '@angular/router';
 
-export const authGuard: CanActivateFn = (_, state) => {
+export const authGuard: CanActivateFn = (route, state) => {
   const token = localStorage.getItem('token');
   if (token) {
     return true; // User is authenticated

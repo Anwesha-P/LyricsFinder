@@ -1,4 +1,10 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
 .logout-card {
-    min-width: 200px;
-    min-height: 120px;
+  max-width: 250px;
+}
+
+.logout-popup-card {
+  z-index: 1000;
+  width: 200px;
 }
