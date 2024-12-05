@@ -1,0 +1,9 @@
+{
+    "/api": {
+      "target": "https://api.genius.com",
+      "secure": true,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }
+  
