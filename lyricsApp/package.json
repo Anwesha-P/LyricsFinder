@@ -15,14 +15,20 @@
     "@angular/common": "^18.2.0",
     "@angular/compiler": "^18.2.0",
     "@angular/core": "^18.2.0",
+    "@angular/fire": "^18.0.1",
     "@angular/forms": "^18.2.0",
     "@angular/material": "^17.3.10",
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "@ionic/angular-toolkit": "^12.1.1",
     "@schematics/angular": "^19.0.2",
+<<<<<<< HEAD
     "client-oauth2": "^4.3.3",
     "genius-lyrics-api": "^3.2.1",
+=======
+    "firebase": "^10.14.1",
+>>>>>>> main
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
