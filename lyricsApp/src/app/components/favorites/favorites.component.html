@@ -1,6 +1,6 @@
-<app-logout></app-logout>
 <div class="favorites-container">
     <div class="header">
+        <app-logout></app-logout>
         <h1>My Favorite Songs</h1>
         <p class="subtitle">Your personally curated collection</p>
     </div>
@@ -8,21 +8,14 @@
     <div class="favorites-grid">
         <!-- Placeholder for favorite song cards -->
         <!-- Will be replaced with *ngFor directive when card component is ready -->
-        <div class="placeholder-card">
-            <p>Favorite songs will appear here</p>
-        </div>
-        <div class="placeholder-card">
-            <p>Favorite songs will appear here</p>
-        </div>
-        <div class="placeholder-card">
-            <p>Favorite songs will appear here</p>
-        </div>
-        <div class="placeholder-card">
-            <p>Favorite songs will appear here</p>
-        </div>
-        <div class="placeholder-card">
-            <p>Favorite songs will appear here</p>
-        </div>
+        <app-song-card></app-song-card>
+        <app-song-card></app-song-card>
+        <app-song-card></app-song-card>
+        <app-song-card></app-song-card>
+        <app-song-card></app-song-card>
+        <app-song-card></app-song-card>
+        <app-song-card></app-song-card>
+        <app-song-card></app-song-card>
     </div>
 </div>
 <app-navbar></app-navbar>

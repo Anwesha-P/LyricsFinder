@@ -5,6 +5,7 @@ import { AuthService } from '../auth-service/auth.service';
 
 
 export interface MusicRec {
+  id: string;
   artist: string;
   lyrics: string;
   releaseDate: string;
@@ -43,10 +44,12 @@ export class DataService {
 
   // Stores a song in the user's favorites
   storeSong(data: MusicRec) {
-    const userEmail = this.auth.currentUser?.email;
+    const userEmail = localStorage.getItem('email');
+    const userDocRef = doc(this.firestore, `users/${userEmail}/favorites`, data.id);    
     if (userEmail) {
-      addDoc(collection(this.firestore, `users/${userEmail}/favorites`),
+      setDoc(userDocRef,
         {
+          id: data.id,
           artist: data.artist,
           lyrics: data.lyrics,
           releaseDate: data.releaseDate,
@@ -58,9 +61,9 @@ export class DataService {
   
   //The method currently takes in data instead of the song title.
   removeSong(data: MusicRec) {
-    const userEmail = this.auth.currentUser?.email;
+    const userEmail = localStorage.getItem('email');
     if (userEmail) {
-      deleteDoc(doc(this.firestore, `users/${userEmail}/favorites/${data.songTitle}`));
+      deleteDoc(doc(this.firestore, `users/${userEmail}/favorites/${data.id}`));
     }
   }
 }
