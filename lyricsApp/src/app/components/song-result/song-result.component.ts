@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+
+import { Component, inject } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { RouterLink } from '@angular/router';
+import { APIService } from '../../service/api-service/api.service';
+import { RouterModule } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { LogoutComponent } from '../logout/logout.component';
 
@@ -11,5 +16,5 @@ import { LogoutComponent } from '../logout/logout.component';
   styleUrl: './song-result.component.css'
 })
 export class SongResultComponent {
-  // Need to inject the service!!!!!!!!!!!!!!
+  service = inject(APIService)
 }

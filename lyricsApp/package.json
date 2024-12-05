@@ -23,6 +23,10 @@
     "@angular/router": "^18.2.0",
     "@ionic/angular-toolkit": "^12.1.1",
     "@schematics/angular": "^19.0.2",
+
+    "client-oauth2": "^4.3.3",
+    "genius-lyrics-api": "^3.2.1",
+
     "bootstrap-icons": "^1.11.3",
     "firebase": "^10.14.1",
     "rxjs": "~7.8.0",
