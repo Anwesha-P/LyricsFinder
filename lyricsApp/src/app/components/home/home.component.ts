@@ -14,8 +14,8 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class HomeComponent {
   songName = '';
-  // private router = inject(Router);
-  constructor(private router: Router) {}
+  private router = inject(Router);
+  constructor() {}
   // const queryParams = {song: this.songName}
   search() {
     console.log(this.songName)
