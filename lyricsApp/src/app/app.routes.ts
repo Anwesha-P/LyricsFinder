@@ -19,7 +19,7 @@ export const authRoutes: Routes = [
 
 export const protectedRoutes: Routes = [
     { path: 'home', component: HomeComponent, canActivate: [authGuard] },
-    { path: 'songResult', component: SongResultComponent, canActivate: [authGuard] },
+    { path: 'songResult/:songName', component: SongResultComponent, canActivate: [authGuard] },
     { path: 'favorites', component: FavoritesComponent, canActivate: [authGuard] },
 ];
 

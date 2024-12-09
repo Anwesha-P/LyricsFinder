@@ -59,12 +59,18 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-
           "options": {
             "proxyConfig": "src/proxy.conf.json"
-          }
-
-
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "lyricsapp:build:production"
+            },
+            "development": {
+              "browserTarget": "lyricsapp:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"

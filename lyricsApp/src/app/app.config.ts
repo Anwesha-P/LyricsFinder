@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -25,7 +25,7 @@ export const appConfig: ApplicationConfig = {
     },
     // Other providers
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes), // Your router configuration
+    provideRouter(routes, withComponentInputBinding()), // Your router configuration
     provideAnimationsAsync(),
     provideFirebaseApp(() => initializeApp({
       projectId: "lyricsfinder-7446e",

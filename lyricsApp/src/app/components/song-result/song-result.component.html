@@ -1,3 +1,26 @@
-<app-logout></app-logout>
+<div class="favorites-container">
+    <app-logout></app-logout>
+    <div class="header">
+        <app-logout></app-logout>
+        <h1>Songs</h1>
+        <p class="subtitle">Your search results:</p>
+        {{songName()}}
+    </div>
+    
+    <div class="favorites-grid">
+        <!-- <div class="song-cards"> -->
+          @for(song of service.data$(); track $index){
+          <app-song-card
 
+            [title]="song.songTitle"
+            [artist]="song.artist"
+            [image]="song.image"
+            [releaseDate]="'Release Date: ' + song.releaseDate"
+            [lyrics]="song.lyrics"
+          >
+          </app-song-card>}
+        <!-- </div> -->
+      </div>
+    
+</div>
 <app-navbar></app-navbar>

@@ -10,6 +10,7 @@ export interface MusicRec {
   lyrics: string;
   releaseDate: string;
   songTitle: string;
+  image: string;
 }
 
 @Injectable({
@@ -54,6 +55,7 @@ export class DataService {
           lyrics: data.lyrics,
           releaseDate: data.releaseDate,
           songTitle: data.songTitle,
+          image: data.image,
         }
       );
     }

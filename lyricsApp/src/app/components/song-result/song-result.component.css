@@ -1,0 +1,41 @@
+.favorites-container {
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 200px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.header h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.favorites-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    max-width: 85%;
+    margin: 0 auto;
+    gap: 20px;
+    grid-auto-rows: 300px;
+}
+
+
