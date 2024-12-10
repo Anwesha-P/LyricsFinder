@@ -9,6 +9,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { authGuard } from './guards/auth.guard';
 import { CheckEmailComponent } from './components/check-email/check-email.component';
 
+// Routes that don't require authentication
 export const authRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
@@ -17,6 +18,7 @@ export const authRoutes: Routes = [
     { path: 'check-email', component: CheckEmailComponent },
 ];
 
+// Routes that require authentication
 export const protectedRoutes: Routes = [
     { path: 'home', component: HomeComponent, canActivate: [authGuard] },
     { path: 'songResult/:songName', component: SongResultComponent, canActivate: [authGuard] },

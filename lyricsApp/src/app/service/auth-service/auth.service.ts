@@ -12,7 +12,8 @@ export class AuthService {
 
   public currentUser: firebase.default.User | undefined;
 
-  
+  // Tutorial Video1: https://youtu.be/eFtrzzP2wMc
+  // Tutorial Video2: https://youtu.be/PVcPTREOcAo
   constructor() { }
 
   // Method to process user login when email and password is provided. Routes user to the home page on successful login.

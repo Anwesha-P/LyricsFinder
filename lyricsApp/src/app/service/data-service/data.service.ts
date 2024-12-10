@@ -1,8 +1,6 @@
 import { inject, Injectable } from '@angular/core';
-import { addDoc, collection, collectionData, deleteDoc, doc, Firestore, query, setDoc } from '@angular/fire/firestore';
+import { collection, collectionData, deleteDoc, doc, Firestore, query, setDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { AuthService } from '../auth-service/auth.service';
-
 
 export interface MusicRec {
   id: string;
@@ -11,13 +9,14 @@ export interface MusicRec {
   releaseDate: string;
   songTitle: string;
   image: string;
+  favorite: boolean;
 }
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class DataService {
-  auth: AuthService = inject(AuthService)
   firestore: Firestore = inject(Firestore)
   public items$: Observable<MusicRec[]> | undefined;
 
@@ -35,8 +34,9 @@ export class DataService {
 
   // Gets the user's favorites from the database
   getUserFavorites() {
-    const userEmail = this.auth.currentUser?.email;
+    const userEmail = localStorage.getItem('email');
     if (userEmail) {
+      console.log(userEmail);
       const favoritesCollection = collection(this.firestore, `users/${userEmail}/favorites`);
       const q = query(favoritesCollection);
       this.items$ = collectionData(q, {idField: 'id'}) as Observable<MusicRec[]>;
@@ -56,6 +56,7 @@ export class DataService {
           releaseDate: data.releaseDate,
           songTitle: data.songTitle,
           image: data.image,
+          favorite: true,
         }
       );
     }
