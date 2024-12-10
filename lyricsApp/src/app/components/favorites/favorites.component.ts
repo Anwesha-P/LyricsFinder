@@ -14,6 +14,5 @@ import { DataService } from '../../service/data-service/data.service';
   styleUrl: './favorites.component.css'
 })
 export class FavoritesComponent {
-  service = inject(DataService);
- 
+  dataService = inject(DataService);
 }

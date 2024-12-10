@@ -3,6 +3,7 @@ import { CanActivateFn } from '@angular/router';
 
 import { Router } from '@angular/router';
 
+// Source: https://dev.to/samuelwachira/angular-authentication-route-guards-4joe
 export const authGuard: CanActivateFn = (route, state) => {
   const token = localStorage.getItem('token');
   if (token) {
