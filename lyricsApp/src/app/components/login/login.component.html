@@ -1,33 +1,27 @@
-<div class="container-fluid h-75">
-    <div class="row h-100 align-items-center justify-content-center">
-        <div class="login-container">
-            <div class="card shadow">
-                <div class="card-body p-3">
-                    <form [formGroup]="loginInfoForm" (ngSubmit)="login()" [ngClass]="'form'">
-                        <div class="mb-2">
-                            <h4 class="text-dark text-muted">Login</h4>
-                        </div>
-                        <div class="mb-2">
-                          <label for="exampleInputEmail1" class="form-label">Email</label>
-                          <input type="email" class="form-control" name="email" formControlName="email">
-                        </div>
-                        <div class="mb-2">
-                          <label for="exampleInputPassword1" class="form-label">Password</label>
-                          <input type="password" class="form-control" name="password" formControlName="password">
-                        </div>
-                        <button type="submit" class="btn btn-info mb-2">Login</button>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <a href="/register">Need Account ? Register</a>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="/reset-password" class="text-danger">Forgot Password ? </a>
-                            </div>
-                        </div>
-                    </form>
+<div class="main">
+    <div class="user-container">
+        <h2>Login</h2>
+        <form [formGroup]="loginInfoForm" (ngSubmit)="login()" [ngClass]="'form'">
+            <div class = "userinput">
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email"  class="form-control" name="email" placeholder="Email" formControlName="email">
+                </div>
+                <div>
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password" formControlName="password">
                 </div>
             </div>
-        </div>
+            <button type="submit">Login</button>
+            <div class="footer">
+                <div class="register">
+                    <a href="/register">Need Account? Register</a>
+                </div>
+                <div class="reset">
+                    <a href="/reset-password" class="text-danger">Forgot Password?</a>
+                </div>
+            </div>
+
+        </form>
     </div>
 </div>
-

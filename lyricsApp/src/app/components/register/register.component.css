@@ -1,9 +1,5 @@
-.login-container {
-    width: 100%;
-    max-width: 500px;
-    padding: 15px;
-}
+/* The css is in styles.css */
 
 .back-to-login {
-    text-decoration: none;
+    text-align: center;
 }

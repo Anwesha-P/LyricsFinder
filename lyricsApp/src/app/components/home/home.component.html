@@ -1,15 +1,14 @@
 <app-logout></app-logout>
-<h1>Lyrics Finder</h1>
+<div class="header">
+    <i class="fas fa-music icon-left"></i>
+    <h1 class="header-title">Lyrics Finder</h1>
+
+</div>
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <h1 class="display-4">Lyrics Finder</h1>
-            <div class="input">
-                <input type="text" [(ngModel)]="songName" placeholder="Search for lyrics...">
-                <button (click)="search()">Search</button>
-                 <!-- <a routerLink="/songResult/songName">Search</a> -->
-            </div>
-        </div>
+    <div class="input">
+        <p>Enter the name of the song you want to find lyrics for:</p>
+        <input type="text" (keydown.enter)="search()" [(ngModel)]="songName" placeholder="Search for lyrics...">
+        <button (click)="search()">Search</button>
     </div>
 </div>
 <app-navbar></app-navbar>

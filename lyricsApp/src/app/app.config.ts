@@ -37,6 +37,6 @@ export const appConfig: ApplicationConfig = {
       measurementId: "G-7X9QGM8D6Y"
     })),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()), provideAnimationsAsync()
   ]
 };

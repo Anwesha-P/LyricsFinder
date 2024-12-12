@@ -70,7 +70,7 @@ export class AuthService {
   // Method to process user password reset
   resetPassword(email: string){
     this.fireauth.sendPasswordResetEmail(email).then( ()=> {
-      this.router.navigate(['/verify-email'])  
+      this.router.navigate(['/check-email'])  
     }, err => {
       alert(err.message);
     })
