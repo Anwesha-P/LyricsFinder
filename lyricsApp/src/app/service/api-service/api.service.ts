@@ -33,14 +33,11 @@ export class APIService {
       console.error('No access token available. Aborting API request.');
       return;
     }
+    const apiUrl = `https://api.genius.com/search?q=${encodeURIComponent(query)}&access_token=${token}`;
 
     // Fetch the data from the API
     try {
-      const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(apiUrl);
 
       if (!response.ok) {
         const errorText = await response.text();
