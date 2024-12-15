@@ -47,7 +47,7 @@ body {
 
 .favorites-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust min-width to fit your design */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Adjust min-width to fit your design */
     gap: 20px; 
     max-width: 85%;
     margin: 0 auto;
