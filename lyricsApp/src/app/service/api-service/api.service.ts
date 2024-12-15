@@ -1,6 +1,6 @@
 import ClientOAuth2 from 'client-oauth2';
 import { Injectable, signal, Inject } from '@angular/core';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../environment'; 
 
 // Interface for Song
 export interface Song {
