@@ -1,47 +1,59 @@
-/* Global styles */
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
 }
 
-.full-screen, .mid-screen {
-  display: none;
-  width: 150px;
-  align-items: right;
+.info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center; /* Ensure vertical alignment */
+  margin-top: 15px;
 }
 
-button.icon {
+.username {
+  flex: none;
+  text-align: right;
+  margin-right: 10px; /* Adds spacing between username and logout button */
+  white-space: nowrap; /* Prevent wrapping of username */
+}
+
+.logout {
+  flex: none;
   background-color: transparent;
-  width: 50px;
+  width: 60px; /* Increased width for the logout button */
   border: none;
+  margin-right: 10px;
   cursor: pointer;
-  position: absolute;
-  right: 10px; 
-  top: 10px; 
+  position: relative; /* Adjusted for better alignment */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-button.icon > .icon {
-  font-size: 2.5rem; /* Increase the size of the icon */
-  color: rgb(40, 40, 40); /* Set the color to black */
-}
-.user{
-  position: absolute;
-  right: 10px;
-  top: 100px;
-}
-.user .top{
-  top: 0px;
-}
-/* Responsive styles */
-@media (min-width: 901px) {
-  .full-screen {
-      display: block;
-  }
+.logout-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 900px) {
-  .mid-screen {
-      display: block;
-  }
+.logout-icon {
+  color: rgb(40, 40, 40);
+  width: 100%;
+  height: 100%; 
+  font-size: 2.0rem; 
+  margin: 0px;
+}
+
+.logout-text {
+  flex: 1;
+  margin: 0;
+  color: black;
+  font-size: 1.0rem; /* Increased font size for the text */
+}
+
+.logout-icon:hover {
+  transform: translateY(-3px); /* Button lift effect */
 }

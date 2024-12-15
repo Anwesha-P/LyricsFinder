@@ -1,45 +1,142 @@
+html {
+  font-size: 1px;  
+}
+body {
+  font-size: 1em;
+}
 .favorites-container {
-    padding: 20px;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 200px;
-}
-
-.header {
-    justify-content: space-between;
     align-items: center;
+    padding-top: 100px;
+    padding-bottom: 150px;
+  }
+  
+  .header {
+    text-align: center; 
     position: fixed;
-    width: 100%;
-    top: 0;
-    width: 100%;
-    padding: 10px 20px; 
     background: linear-gradient(68.6deg, rgb(252, 165, 241) 1.8%, rgb(181, 255, 255) 100.5%);
     box-shadow: 0 8px 6px rgba(26, 26, 26, 0.1); 
     z-index: 1000; 
-}
-.header h1 {
-    font-size: 3rem; /* Adjusted font size for better alignment */
+    width: 100%;
+    top: 0 ;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem; 
     font-weight: bold;
-    text-align: center;
-    margin: 0; /* Remove margin for better alignment */
-    color: #333;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.subtitle {
-    color: #666;
-    font-size: 1.1rem;
-}
+    margin-bottom: 10px; 
+    margin-top: 10px;
+  }
+  
+  .header .subtitle {
+    font-size: 1.2rem;
+    color: #555; 
+    margin-top: 0; 
+    margin-bottom: 10px; 
+  }
+  
+.no-song{
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: 100%;
+  }
 
 .favorites-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust min-width to fit your design */
-    gap: 20px; /* Space between grid items */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Adjust min-width to fit your design */
+    gap: 10px; 
     max-width: 85%;
     margin: 0 auto;
-    padding: 20px; /* Add padding to the grid container */
-    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+.favorites-container app-logout {
+  flex: none;
+  margin-left: auto;
+}
+/* Loading screen code from https://codepen.io/xavez/pen/YWVgWz */
+.loading-screen{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.spinner {
+  display: flex;
+  width: 350px;
+  height: 195px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spinner > div {
+  background: #ff00f2;
+  height: 100%;
+  width: 4px;
+  float: left;
+  margin: 0 2px;
+  animation: stretch 2s infinite;
+  animation-timing-function: cubic-bezier(.62,.28,.23,.99);
+}
+
+.spinner .r1 {
+  animation-delay: -1s;
+}
+
+.spinner .r2 {
+  animation-delay: -.9s;
+}
+
+.spinner .r3 {
+  animation-delay: -.8s;
+}
+
+.spinner .r4 {
+  animation-delay: -.7s;
+}
+
+.spinner .r5 {
+  animation-delay: -.6s;
+}
+.spinner .r6 {
+    animation-delay: -.5s;
+}
+
+.spinner .r7 {
+animation-delay: -.4s;
+}
+
+.spinner .r8 {
+animation-delay: -.3s;
+}
+
+.spinner .r9 {
+animation-delay: -.2s;
+}
+
+.spinner .r10 {
+animation-delay: -.1s;
+}
+
+@keyframes stretch {
+  0%, 20%, 49% { 
+    transform: scaleY(0.4);
+    background-color: #ff00f2;
+  }
+  
+  10% { 
+    transform: scaleY(1.0);
+  }
+  
+  50%, 70%, 100% { 
+    transform: scaleY(0.4);
+    background-color: #00d9ff;
+  }
+  
+  60% { 
+    transform: scaleY(1.0);
+    background-color: #00d9ff;
+  }
 }

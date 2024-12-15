@@ -33,30 +33,27 @@
             ],
             "scripts": []
           },
+          
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
-                }
-              ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": false,
+              "styles": ["src/styles.css"],
+              "scripts": [],
+              "sourceMap": false,
+              "aot": false
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "styles": ["src/styles.css"],
+              "scripts": []
             }
           },
           "defaultConfiguration": "production"
         },
+        
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {

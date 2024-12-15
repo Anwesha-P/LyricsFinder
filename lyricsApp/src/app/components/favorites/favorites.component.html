@@ -1,13 +1,13 @@
 <div class="favorites-container">
   <div class="header">
-    <div><h1>My Favorite Songs</h1></div>
-    <div><p class="subtitle">Your personally curated collection</p></div>
+    <h1>Favorite Songs</h1>
+    <p class="subtitle">Your personally curated collection of songs</p>
   </div>
   <app-logout></app-logout>
 
   <div class="favorites-grid">
     @if (!(dataService.items$ | async)?.length) {
-    <p>Please add some songs to your favorites!</p>
+    <p class="no-song">Please add some songs to your favorites!</p>
     } @else { @for(song of dataService.items$ | async; track $index){
     <app-song-card
       [id]="song.id"

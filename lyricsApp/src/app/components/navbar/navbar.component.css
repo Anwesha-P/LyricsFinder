@@ -1,10 +1,16 @@
+html {
+    font-size: 12px;  
+  }
+  body {
+    font-size: 1em;
+  }
 .topnav {
     position: fixed;
     bottom: 0;
     width: 100%;
     box-shadow: 0 -4px 6px rgba(26, 26, 26, 0.1); /* Upper box shadow */
     border-top: 1px solid #ccc; /* Top border */
-    /* background: #e8d0ff; Background color */
+    background: linear-gradient(68.6deg, rgb(252, 165, 241) 1.8%, rgb(181, 255, 255) 100.5%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,7 +25,7 @@
     font-weight: bold;
     padding: 14px 0;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 1.5em;
 }
 
 .topnav a:hover {

@@ -28,20 +28,27 @@ export class SongResultComponent {
   songName: string = '';
   service = inject(APIService);
   private route = inject(ActivatedRoute);
+  isLoading = true;
+
 
   constructor() {
-    this.fetchSongName();
+    setTimeout(() => {
+      this.isLoading = false;
+      this.fetchSongName();
+    }, 2000); // Simulate a 2-second loading time
+    
   }
 
   fetchSongName() {
-    // Fetch the song name from the route parameters
-    // Source: https://medium.com/@tiboprea/accessing-url-parameters-in-angular-snapshot-vs-subscription-efc4e70f9053
     this.route.paramMap.subscribe(params => {
       this.songName = params.get('songName') || '';
-      // console.log('songName', this.songName);
-
+      this.isLoading = true;
       // Fetch the song data from the API
-      this.service.fetchData(this.songName);
+      this.service.fetchData(this.songName).then(() => {
+        this.isLoading = false;
+      }).catch(() => {
+        this.isLoading = false;
+      });
     });
   }
 }

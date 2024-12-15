@@ -1,25 +1,46 @@
-<div class="favorites-container">
-  <app-logout></app-logout>
-  <div class="header">
-    <h1>Songs</h1>
-    <p class="subtitle">Your search results:</p>
+@if (isLoading){
+  <div  class="loading-screen">
+    <div class="spinner">
+      <div class="r1"></div>
+      <div class="r2"></div>
+      <div class="r3"></div>
+      <div class="r4"></div>
+      <div class="r5"></div>
+      <div class="r6"></div>
+      <div class="r7"></div>
+      <div class="r8"></div>
+      <div class="r9"></div>
+      <div class="r10"></div>
+    </div>
   </div>
 
-  <div class="favorites-grid">
-    @if ( service.data$().length === 0) {
-      <p>No songs found</p>
-    } @else {
-      @for (song of service.data$(); track $index) {
-        <app-song-card
-          [id]="song.id"
-          [title]="song.songTitle"
-          [artist]="song.artist"
-          [image]="song.image"
-          [releaseDate]="'Release Date: ' + song.releaseDate"
-          [lyrics]="song.lyrics"
-        ></app-song-card>
+}
+@else {
+  <div class="favorites-container">
+    <div class="header">
+      <h1>Song Search</h1>
+      <p class="subtitle">Songs that matches your search</p>
+    </div>
+    <app-logout></app-logout>
+  
+    
+    <div class="favorites-grid">
+      @if ( service.data$().length === 0) {
+        <p class="no-song">No songs found for the current search</p>
+      } @else {
+        @for (song of service.data$(); track $index) {
+          <app-song-card
+            [id]="song.id"
+            [title]="song.songTitle"
+            [artist]="song.artist"
+            [image]="song.image"
+            [releaseDate]="song.releaseDate"
+            [lyrics]="song.lyrics"
+          ></app-song-card>
+        }
       }
-    }
+    </div>
   </div>
-</div>
-<app-navbar></app-navbar>
+  <app-navbar></app-navbar>
+}
+

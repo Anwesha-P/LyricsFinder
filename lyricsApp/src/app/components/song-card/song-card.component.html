@@ -4,14 +4,18 @@
         <mat-icon [class.favorite]="isFavorite" (click)="toggleFavorite()">star</mat-icon>
     </div>
     <mat-card class="mat-card" appearance="outlined">
-        <img mat-card-md-image [src]="sanitizedImage" alt="Song Image" class="polaroid-image">
+        <div class="image">
+            <img mat-card-md-image [src]="sanitizedImage" alt="Song Image" class="polaroid-image">
+        </div>
         <mat-card-header class="cardheader">
-            <mat-card-title>{{title()}}</mat-card-title>
-            <mat-card-subtitle>{{artist()}}</mat-card-subtitle>
+            <mat-card-title>{{ title().length > 40 ? (title() | slice:0:40) + '...' : title() }}</mat-card-title>
+            <mat-card-subtitle>
+                {{ title().length > 20 ? (artist().length > 25 ? (artist() | slice:0:25) + '...' : artist()) : (artist().length > 50 ? (artist() | slice:0:50) + '...' : artist()) }}
+            </mat-card-subtitle>
+            <div class="release-date">{{releaseDate()}}</div>
         </mat-card-header>
-        <div class="release-date">{{releaseDate()}}</div>
         <mat-card-content>
-            <a [href]="getLyricsUrl()" target="_blank">Get Lyrics here</a>
+            <a [href]="getLyricsUrl()" target="_blank">Song Lyrics</a>
         </mat-card-content>
     </mat-card>
 </div>

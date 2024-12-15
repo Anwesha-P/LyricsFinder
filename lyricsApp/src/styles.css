@@ -1,10 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-
+html {
+    font-size: 12px;  
+  }
+  body {
+    font-size: 1em;  
+  }
 html, body { height: 100%; }
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background: linear-gradient(68.6deg, rgb(252, 165, 241) 1.8%, rgb(181, 255, 255) 100.5%);
+    background-attachment: fixed; 
 }
 
 /* login.component.css */
@@ -61,6 +67,10 @@ label {
   
 button:hover {
     background-color: #7332c8;
+    transform: translateY(-3px);
+}
+button:active {
+    transform: translateY(1px); 
 }
 
 .footer{

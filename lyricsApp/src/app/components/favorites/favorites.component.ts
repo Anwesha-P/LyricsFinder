@@ -15,4 +15,6 @@ import { DataService } from '../../service/data-service/data.service';
 })
 export class FavoritesComponent {
   dataService = inject(DataService);
+
+
 }

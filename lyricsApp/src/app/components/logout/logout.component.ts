@@ -11,14 +11,8 @@ import { AuthService } from '../../service/auth-service/auth.service';
 export class LogoutComponent {
   auth = inject(AuthService);
   email = localStorage.getItem('email');
-  userName = localStorage.getItem('userName');
-  
-  isLogoutCardVisible = false;
-  
-  toggleLogoutCard() {
-    this.isLogoutCardVisible = !this.isLogoutCardVisible;
-  }
-  
+  userName = localStorage.getItem('userName');  
+
   logout() {
     this.auth.logout();
   }

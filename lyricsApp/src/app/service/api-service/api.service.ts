@@ -1,5 +1,6 @@
 import ClientOAuth2 from 'client-oauth2';
 import { Injectable, signal, Inject } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 // Interface for Song
 export interface Song {
@@ -19,11 +20,14 @@ export class APIService {
 
   public data$ = signal<Song[]>([]);
 
+  getToken() {
+    return environment.token;  // Access token from environment
+  }
   // Fetch data from the Genius API
   // Genius API: https://genius.com/developers 
   async fetchData(query: string) {
     console.log('Fetching data...');
-    const token = "-EaniIChAev_5wk4jPd3GbNYF5Z1JEfi3tLfdiERDMJpX48jqTowiZYBM_7TXwZJ";
+    const token = this.getToken();
     // const token = this.getAccessToken();
     if (!token) {
       console.error('No access token available. Aborting API request.');
