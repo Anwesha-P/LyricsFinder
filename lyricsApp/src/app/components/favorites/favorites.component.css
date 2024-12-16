@@ -1,5 +1,5 @@
 html {
-  font-size: 1px;  
+  font-size: 12px;  
 }
 body {
   font-size: 1em;
@@ -47,7 +47,7 @@ body {
 
 .favorites-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Adjust min-width to fit your design */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 10px; 
     max-width: 85%;
     margin: 0 auto;
